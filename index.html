@@ -1,192 +1,51 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>باقات التصميم | ELSMKARY MEDIA</title>
-<style>
-:root{
-  --bg:#050505;
-  --card:#101010;
-  --gold:#d4af37;
-  --text:#f5f5f5;
-  --muted:#aaa;
-  --line:rgba(212,175,55,.25);
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Tahoma, Arial, sans-serif;
+.ai-box{
+  margin:60px auto 25px;
+  max-width:900px;
+  text-align:center;
   background:
-    radial-gradient(circle at top, #2b2410 0%, #070707 42%, #000 100%);
-  color:var(--text);
+    linear-gradient(180deg,#111,#050505);
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:28px;
+  padding:40px 20px;
+  box-shadow:
+    0 0 40px rgba(212,175,55,.08);
 }
-.hero{
-  min-height:100vh;
-  padding:45px 18px;
-}
-.logo{
-  text-align:center;
-  color:var(--gold);
-  font-size:46px;
-  font-weight:900;
-  letter-spacing:3px;
-}
-h1{
-  text-align:center;
-  font-size:42px;
-  margin:12px 0;
-}
-.sub{
-  text-align:center;
-  color:var(--muted);
-  max-width:760px;
-  margin:0 auto 35px;
-  line-height:1.8;
-}
-.packages{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-  max-width:1150px;
-  margin:auto;
-}
-.card{
-  background:linear-gradient(180deg,#151515,#070707);
-  border:1px solid var(--line);
-  border-radius:26px;
-  padding:28px;
-  position:relative;
-  box-shadow:0 20px 70px rgba(0,0,0,.45);
-}
-.card.featured{
-  transform:scale(1.04);
-  border-color:var(--gold);
-  box-shadow:0 0 45px rgba(212,175,55,.18);
-}
-.badge{
-  position:absolute;
-  top:18px;
-  left:18px;
-  background:var(--gold);
-  color:#000;
-  padding:7px 14px;
-  border-radius:30px;
-  font-weight:bold;
-  font-size:13px;
-}
-.card h2{
-  color:var(--gold);
-  font-size:28px;
-}
-.price{
+
+.ai-box h2{
+  color:#d4af37;
   font-size:34px;
-  font-weight:900;
-  margin:12px 0;
+  margin-bottom:10px;
 }
-.price span{
-  font-size:15px;
-  color:var(--muted);
+
+.ai-box p{
+  color:#aaa;
+  margin-bottom:30px;
 }
-ul{
-  padding:0;
-  list-style:none;
+
+.ai-buttons{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
-li{
-  padding:12px 0;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  color:#ddd;
-}
-li::before{
-  content:"✓ ";
-  color:var(--gold);
-  font-weight:bold;
-}
-.btn{
-  display:block;
-  margin-top:24px;
-  text-align:center;
+
+.ai-btn{
   text-decoration:none;
-  background:linear-gradient(135deg,#d4af37,#8f6b16);
   color:#000;
+  background:
+    linear-gradient(135deg,#d4af37,#8b6914);
+  padding:18px 34px;
+  border-radius:18px;
+  font-size:20px;
   font-weight:900;
-  padding:15px;
-  border-radius:16px;
+  transition:.3s;
+  min-width:220px;
+  box-shadow:
+    0 10px 25px rgba(212,175,55,.2);
 }
-.note{
-  text-align:center;
-  color:var(--muted);
-  margin-top:35px;
+
+.ai-btn:hover{
+  transform:translateY(-5px) scale(1.03);
+  box-shadow:
+    0 15px 35px rgba(212,175,55,.35);
 }
-@media(max-width:900px){
-  .packages{grid-template-columns:1fr}
-  .card.featured{transform:none}
-  h1{font-size:31px}
-}
-</style>
-</head>
-<body>
-
-<section class="hero">
-  <div class="logo">M</div>
-  <h1>باقات التصميم من السمكري ميديا</h1>
-  <p class="sub">
-    اختار الباقة اللي تناسب شغلك… من تصميمات سريعة محترمة، لباقة كاملة تخلي البراند بتاعك شكله رسمي وفخم على السوشيال ميديا.
-  </p>
-
-  <div class="packages">
-
-    <div class="card">
-      <h2>Start Design</h2>
-      <p>للمشاريع الصغيرة والبدايات</p>
-      <div class="price">499 <span>جنيه / باقة</span></div>
-      <ul>
-        <li>5 تصميمات سوشيال ميديا</li>
-        <li>مقاسات فيسبوك وإنستجرام</li>
-        <li>تعديل واحد لكل تصميم</li>
-        <li>صياغة كابشن بسيط</li>
-        <li>تسليم خلال 3 أيام</li>
-      </ul>
-      <a class="btn" href="https://wa.me/201030085653?text=عاوز%20باقة%20Start%20Design%20من%20السمكري%20ميديا">اطلب الباقة</a>
-    </div>
-
-    <div class="card featured">
-      <div class="badge">الأكثر طلبًا</div>
-      <h2>Growth Design</h2>
-      <p>للبراند اللي عاوز شكل ثابت وقوي</p>
-      <div class="price">999 <span>جنيه / باقة</span></div>
-      <ul>
-        <li>12 تصميم سوشيال ميديا</li>
-        <li>ستايل بصري موحد للصفحة</li>
-        <li>3 أفكار عروض أو بوستات بيع</li>
-        <li>كابشن تسويقي لكل بوست</li>
-        <li>تعديلات مفتوحة لمدة 48 ساعة</li>
-        <li>تسليم خلال 5 أيام</li>
-      </ul>
-      <a class="btn" href="https://wa.me/201030085653?text=عاوز%20باقة%20Growth%20Design%20من%20السمكري%20ميديا">ابدأ دلوقتي</a>
-    </div>
-
-    <div class="card">
-      <h2>Elite Brand</h2>
-      <p>للناس اللي عاوزة شغل تقيل وفخم</p>
-      <div class="price">1999 <span>جنيه / باقة</span></div>
-      <ul>
-        <li>20 تصميم سوشيال ميديا</li>
-        <li>هوية مصغرة للبراند</li>
-        <li>غلاف فيسبوك + صورة بروفايل</li>
-        <li>قوالب عروض قابلة للتكرار</li>
-        <li>خطة محتوى أسبوعين</li>
-        <li>ملف تسليم منظم للعميل</li>
-      </ul>
-      <a class="btn" href="https://wa.me/201030085653?text=عاوز%20باقة%20Elite%20Brand%20من%20السمكري%20ميديا">احجز استشارة</a>
-    </div>
-
-  </div>
-
-  <p class="note">
-    الأسعار قابلة للتعديل حسب نوع الشغل وعدد التصميمات — ELSMKARY MEDIA © 2026
-  </p>
-</section>
-
-</body>
-</html>
