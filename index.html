@@ -1,1011 +1,288 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chef Hassan | Italian & Fast Food</title>
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <meta name="theme-color" content="#080808">
-
-  <meta name="description"
-        content="وجبة كفتة عائلية تكفي 4 أشخاص من مطعم طلباتك هنا بسعر 199 جنيه">
-
-  <title>وجبة الكفتة العائلية | طلباتك هنا</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --gold: #f4b41a;
-      --gold-light: #ffd66b;
-      --red: #991717;
-      --dark: #080808;
-      --card: #141414;
-      --white: #ffffff;
-      --gray: #b7b7b7;
-      --green: #25d366;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Cairo',sans-serif;
+      background:#0b0705;
+      color:#fff;
+      overflow-x:hidden;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Cairo", sans-serif;
-
+    a{text-decoration:none;color:inherit}
+    .hero{
+      min-height:100vh;
       background:
-        radial-gradient(
-          circle at 15% 15%,
-          rgba(244, 180, 26, 0.13),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 85% 85%,
-          rgba(153, 23, 23, 0.2),
-          transparent 30%
-        ),
-        var(--dark);
-
-      color: var(--white);
-      min-height: 100vh;
-      overflow-x: hidden;
+        linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      padding:40px 8%;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+    .hero-box{max-width:720px}
+    .tag{
+      display:inline-block;
+      background:#c99b3b;
+      color:#120b05;
+      padding:8px 18px;
+      border-radius:40px;
+      font-weight:900;
+      margin-bottom:18px;
     }
-
-    img {
-      max-width: 100%;
+    h1{
+      font-size:58px;
+      line-height:1.2;
+      margin-bottom:18px;
     }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
+    h1 span{color:#f2c14e}
+    .hero p{
+      font-size:21px;
+      color:#eee;
+      margin-bottom:28px;
     }
-
-    /* الهيدر */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-
-      background: rgba(8, 8, 8, 0.84);
-      backdrop-filter: blur(15px);
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.08);
+    .buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
     }
-
-    nav {
-      min-height: 72px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
+    .btn{
+      padding:14px 24px;
+      border-radius:14px;
+      font-weight:900;
+      transition:.3s;
     }
+    .whatsapp{background:#25D366;color:#081b0d}
+    .dark{border:1px solid #f2c14e;color:#f2c14e}
+    .btn:hover{transform:translateY(-4px)}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      font-size: 1.15rem;
-      font-weight: 900;
+    section{padding:70px 8%}
+    .title{
+      text-align:center;
+      margin-bottom:40px;
     }
+    .title h2{
+      font-size:38px;
+      color:#f2c14e;
+      margin-bottom:10px;
+    }
+    .title p{color:#ccc}
 
-    .logo {
-      width: 48px;
-      height: 48px;
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:24px;
+    }
+    .card{
+      background:linear-gradient(180deg,#1a120c,#0f0a07);
+      border:1px solid rgba(242,193,78,.25);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 20px 45px rgba(0,0,0,.35);
+      transition:.3s;
+    }
+    .card:hover{transform:translateY(-8px)}
+    .card img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
+    }
+    .card-content{padding:20px}
+    .card-content h3{
+      color:#f2c14e;
+      font-size:23px;
+      margin-bottom:8px;
+    }
+    .card-content p{color:#ccc;font-size:15px}
 
-      display: grid;
-      place-items: center;
-
-      border-radius: 15px;
-
+    .about{
       background:
-        linear-gradient(
-          135deg,
-          var(--gold-light),
-          var(--gold)
-        );
+        linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.82)),
+        url("https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;
+      background-position:center;
+      border-top:1px solid #2a1d12;
+      border-bottom:1px solid #2a1d12;
+    }
+    .about-box{
+      max-width:900px;
+      margin:auto;
+      text-align:center;
+    }
+    .about-box h2{font-size:38px;color:#f2c14e;margin-bottom:18px}
+    .about-box p{font-size:20px;color:#eee;line-height:1.9}
 
-      color: #111;
-      font-size: 1.35rem;
-
-      box-shadow:
-        0 10px 30px rgba(244, 180, 26, 0.25);
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:25px;
+    }
+    .socials a{
+      background:#17100b;
+      border:1px solid #f2c14e;
+      color:#f2c14e;
+      padding:12px 20px;
+      border-radius:14px;
+      font-weight:900;
     }
 
-    .header-button {
-      padding: 11px 20px;
-
-      border-radius: 100px;
-
-      color: #111;
-      font-weight: 900;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--gold),
-          var(--gold-light)
-        );
-
-      box-shadow:
-        0 10px 28px rgba(244, 180, 26, 0.22);
-
-      transition: 0.3s;
+    .contact{
+      text-align:center;
+      background:#120c08;
+    }
+    .phone{
+      font-size:30px;
+      color:#25D366;
+      font-weight:900;
+      margin:15px 0;
     }
 
-    .header-button:hover {
-      transform: translateY(-3px);
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#050302;
+      color:#aaa;
+      font-size:14px;
     }
 
-    /* العرض الرئيسي */
-
-    .hero {
-      padding: 70px 0 45px;
+    .float-wa{
+      position:fixed;
+      left:20px;
+      bottom:20px;
+      background:#25D366;
+      color:#061b0c;
+      padding:14px 18px;
+      border-radius:50px;
+      font-weight:900;
+      box-shadow:0 10px 30px rgba(37,211,102,.35);
+      z-index:99;
     }
 
-    .hero-grid {
-      display: grid;
-
-      grid-template-columns:
-        1.05fr 0.95fr;
-
-      align-items: center;
-      gap: 50px;
-    }
-
-    .offer-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      margin-bottom: 20px;
-      padding: 8px 15px;
-
-      border-radius: 100px;
-
-      color: var(--gold-light);
-
-      background:
-        rgba(244, 180, 26, 0.09);
-
-      border:
-        1px solid rgba(244, 180, 26, 0.35);
-
-      font-weight: 800;
-      font-size: 0.93rem;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-
-      font-size:
-        clamp(2.4rem, 5vw, 5.2rem);
-
-      line-height: 1.15;
-      font-weight: 900;
-    }
-
-    h1 span {
-      display: block;
-
-      color: var(--gold);
-
-      text-shadow:
-        0 10px 40px rgba(244, 180, 26, 0.2);
-    }
-
-    .description {
-      max-width: 650px;
-
-      margin-bottom: 25px;
-
-      color: #d5d5d5;
-
-      font-size:
-        clamp(1rem, 2vw, 1.2rem);
-
-      line-height: 1.9;
-    }
-
-    .price-box {
-      display: flex;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 12px;
-
-      margin-bottom: 30px;
-    }
-
-    .price-number {
-      color: var(--gold);
-
-      font-size:
-        clamp(3.6rem, 7vw, 6rem);
-
-      font-weight: 900;
-      line-height: 0.9;
-    }
-
-    .price-text {
-      padding-bottom: 8px;
-
-      font-size: 1.4rem;
-      font-weight: 900;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .button {
-      min-height: 56px;
-      padding: 0 24px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-
-      border-radius: 16px;
-
-      font-weight: 900;
-
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      transform: translateY(-4px);
-    }
-
-    .button-primary {
-      color: #111;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--gold),
-          var(--gold-light)
-        );
-
-      box-shadow:
-        0 13px 32px rgba(244, 180, 26, 0.23);
-    }
-
-    .button-secondary {
-      background: var(--card);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* صورة العرض */
-
-    .image-area {
-      position: relative;
-    }
-
-    .image-border {
-      padding: 10px;
-
-      border-radius: 31px;
-
-      background:
-        linear-gradient(
-          145deg,
-          var(--gold),
-          rgba(255, 255, 255, 0.08),
-          var(--red)
-        );
-
-      box-shadow:
-        0 35px 90px rgba(0, 0, 0, 0.55);
-    }
-
-    .image-border img {
-      display: block;
-
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-
-      border-radius: 23px;
-    }
-
-    .people-badge {
-      position: absolute;
-      left: -22px;
-      bottom: 30px;
-
-      width: 120px;
-      height: 120px;
-
-      display: grid;
-      place-items: center;
-
-      text-align: center;
-
-      border-radius: 50%;
-
-      background:
-        linear-gradient(
-          145deg,
-          var(--red),
-          #580606
-        );
-
-      border: 5px solid var(--gold);
-
-      box-shadow:
-        0 18px 42px rgba(0, 0, 0, 0.45);
-
-      font-weight: 900;
-      line-height: 1.2;
-
-      transform: rotate(-6deg);
-    }
-
-    .people-badge strong {
-      display: block;
-      font-size: 2.2rem;
-    }
-
-    /* محتويات الوجبة */
-
-    .meal-details {
-      padding: 50px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-      font-size:
-        clamp(1.9rem, 4vw, 3rem);
-
-      font-weight: 900;
-    }
-
-    .section-title p {
-      margin-top: 8px;
-      color: var(--gray);
-    }
-
-    .meal-cards {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 16px;
-    }
-
-    .meal-card {
-      overflow: hidden;
-
-      border-radius: 23px;
-
-      background:
-        linear-gradient(
-          160deg,
-          rgba(255, 255, 255, 0.07),
-          rgba(255, 255, 255, 0.025)
-        );
-
-      border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-      box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.18);
-
-      transition: 0.3s;
-    }
-
-    .meal-card:hover {
-      transform: translateY(-6px);
-
-      border-color:
-        rgba(244, 180, 26, 0.4);
-    }
-
-    .meal-card img {
-      display: block;
-
-      width: 100%;
-      height: 190px;
-
-      object-fit: cover;
-
-      transition: 0.45s;
-    }
-
-    .meal-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-content h3 {
-      margin-bottom: 7px;
-      font-size: 1.08rem;
-    }
-
-    .card-content p {
-      color: var(--gray);
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    /* قسم الطلب */
-
-    .order-section {
-      padding: 40px 0 80px;
-    }
-
-    .order-box {
-      padding: 36px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 25px;
-
-      border-radius: 30px;
-
-      background:
-        linear-gradient(
-          115deg,
-          rgba(153, 23, 23, 0.96),
-          rgba(70, 5, 5, 0.98)
-        );
-
-      border:
-        1px solid rgba(255, 214, 107, 0.18);
-
-      box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.35);
-    }
-
-    .order-box h2 {
-      margin-bottom: 7px;
-
-      font-size:
-        clamp(1.7rem, 3vw, 2.7rem);
-
-      font-weight: 900;
-    }
-
-    .order-box p {
-      color: #f1dddd;
-    }
-
-    /* الفوتر */
-
-    footer {
-      padding: 28px 0 95px;
-
-      text-align: center;
-
-      color: #a8a8a8;
-
-      border-top:
-        1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    /* زر واتساب العائم */
-
-    .floating-whatsapp {
-      position: fixed;
-
-      left: 18px;
-      bottom: 18px;
-
-      z-index: 200;
-
-      width: 65px;
-      height: 65px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: var(--green);
-      color: white;
-
-      font-size: 1.65rem;
-
-      border:
-        4px solid rgba(255, 255, 255, 0.17);
-
-      box-shadow:
-        0 15px 38px rgba(37, 211, 102, 0.34);
-
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%,
-      100% {
-        box-shadow:
-          0 0 0 0 rgba(37, 211, 102, 0.3),
-          0 15px 38px rgba(37, 211, 102, 0.34);
-      }
-
-      50% {
-        box-shadow:
-          0 0 0 14px rgba(37, 211, 102, 0),
-          0 15px 38px rgba(37, 211, 102, 0.34);
-      }
-    }
-
-    /* الموبايل */
-
-    @media (max-width: 900px) {
-      .hero {
-        padding-top: 35px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .image-area {
-        order: 1;
-        max-width: 620px;
-        margin: auto;
-      }
-
-      .hero-content {
-        order: 2;
-        text-align: center;
-      }
-
-      .description {
-        margin-inline: auto;
-      }
-
-      .price-box,
-      .buttons {
-        justify-content: center;
-      }
-
-      .meal-cards {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .order-box {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: 94%;
-      }
-
-      nav {
-        min-height: 65px;
-      }
-
-      .brand {
-        font-size: 0.95rem;
-      }
-
-      .logo {
-        width: 42px;
-        height: 42px;
-      }
-
-      .header-button {
-        padding: 9px 14px;
-        font-size: 0.85rem;
-      }
-
-      .hero {
-        padding-top: 25px;
-      }
-
-      .image-border {
-        border-radius: 24px;
-      }
-
-      .image-border img {
-        border-radius: 18px;
-      }
-
-      .people-badge {
-        left: -4px;
-        bottom: 15px;
-
-        width: 95px;
-        height: 95px;
-
-        font-size: 0.82rem;
-      }
-
-      .people-badge strong {
-        font-size: 1.8rem;
-      }
-
-      .buttons .button {
-        width: 100%;
-      }
-
-      .meal-cards {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .meal-card img {
-        height: 220px;
-      }
-
-      .order-box {
-        padding: 28px 18px;
-      }
+    @media(max-width:700px){
+      h1{font-size:38px}
+      .hero p{font-size:18px}
+      section{padding:55px 5%}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- الهيدر -->
+  <a class="float-wa" href="https://wa.me/201026171159" target="_blank">واتساب الآن</a>
 
-  <header>
-
-    <div class="container">
-
-      <nav>
-
-        <a href="#" class="brand">
-
-          <span class="logo">
-            ط
-          </span>
-
-          <span>
-            طلباتك هنا
-          </span>
-
-        </a>
-
-        <a href="tel:0503431662"
-           class="header-button">
-
-          اطلب دلوقتي
-
-        </a>
-
-      </nav>
-
+  <header class="hero">
+    <div class="hero-box">
+      <div class="tag">CHEF HASSAN</div>
+      <h1>الشيف حسن <br><span>مذاق إيطالي وفاست فود</span></h1>
+      <p>
+        أكلات إيطالي، بيتزا، باستا، برجر، ساندوتشات وفاست فود بطعم احترافي وشغل شيف بجد.
+      </p>
+      <div class="buttons">
+        <a class="btn whatsapp" href="https://wa.me/201026171159" target="_blank">اطلب على واتساب</a>
+        <a class="btn dark" href="#menu">شوف المنيو</a>
+      </div>
     </div>
-
   </header>
 
-
-  <main>
-
-    <!-- العرض الرئيسي -->
-
-    <section class="hero">
-
-      <div class="container hero-grid">
-
-        <div class="hero-content">
-
-          <div class="offer-label">
-            🔥 عرض العيلة النهارده
-          </div>
-
-          <h1>
-
-            وجبة كفتة
-
-            <span>
-              تكفي 4 أشخاص
-            </span>
-
-          </h1>
-
-          <p class="description">
-
-            لمة العيلة محتاجة أكلة تشبع وتفرّح.
-
-            وجبة كفتة مشوية على الفحم
-
-            مع عيش طازة وطحينة وسلطات متنوعة
-
-            من مطعم طلباتك هنا.
-
-          </p>
-
-          <div class="price-box">
-
-            <div class="price-number">
-              199
-            </div>
-
-            <div class="price-text">
-              جنيه بس
-            </div>
-
-          </div>
-
-          <div class="buttons">
-
-            <a
-              href="https://wa.me/201030085653?text=أنا%20عاوز%20أطلب%20وجبة%20الكفتة%20العائلية%20بـ%20199%20جنيه"
-              target="_blank"
-              rel="noopener"
-              class="button button-primary">
-
-              اطلب على واتساب
-
-            </a>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=ميت+ضافر+طريق+المقابر+القديمة"
-              target="_blank"
-              rel="noopener"
-              class="button button-secondary">
-
-              افتح الموقع على الخريطة
-
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="image-area">
-
-          <div class="image-border">
-
-            <img
-              src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=90"
-              alt="وجبة كفتة مشوية مع العيش والسلطات"
-              loading="eager">
-
-          </div>
-
-          <div class="people-badge">
-
-            تكفي
-
-            <strong>
-              4
-            </strong>
-
-            أشخاص
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- تفاصيل الوجبة -->
-
-    <section class="meal-details">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <h2>
-            الوجبة فيها إيه؟
-          </h2>
-
-          <p>
-            كل اللي محتاجه للّمة في عرض واحد
-          </p>
-
-        </div>
-
-
-        <div class="meal-cards">
-
-          <article class="meal-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85"
-              alt="كفتة مشوية"
-              loading="lazy">
-
-            <div class="card-content">
-
-              <h3>
-                كفتة مشوية
-              </h3>
-
-              <p>
-                كفتة متبلة ومشوية على الفحم بطعم يفتح النفس.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="meal-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=85"
-              alt="عيش طازة"
-              loading="lazy">
-
-            <div class="card-content">
-
-              <h3>
-                عيش طازة
-              </h3>
-
-              <p>
-                عيش طازة وسخن يكمل طعم الوجبة.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="meal-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=800&q=85"
-              alt="طحينة"
-              loading="lazy">
-
-            <div class="card-content">
-
-              <h3>
-                طحينة
-              </h3>
-
-              <p>
-                طحينة كريمي بطعم مميز مع الكفتة المشوية.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="meal-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=85"
-              alt="سلطات متنوعة"
-              loading="lazy">
-
-            <div class="card-content">
-
-              <h3>
-                سلطات متنوعة
-              </h3>
-
-              <p>
-                تشكيلة سلطات طازة وفريش تكمل الوجبة.
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- قسم الطلب -->
-
-    <section class="order-section">
-
-      <div class="container">
-
-        <div class="order-box">
-
-          <div>
-
-            <h2>
-              جاهز للّمة؟ 😍
-            </h2>
-
-            <p>
-              اطلب وجبة الكفتة العائلية دلوقتي
-              والتوصيل حسب منطقتك.
-            </p>
-
-          </div>
-
-          <a
-            href="tel:0503431662"
-            class="button button-primary">
-
-            اتصل: 0503431662
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- الفوتر -->
-
-  <footer>
-
-    <div class="container">
-
-      📍 ميت ضافر – طريق المقابر القديمة
-
-      <br>
-
-      📞 للطلبات: 0503431662
-
-      <br>
-
-      جميع الحقوق محفوظة © طلباتك هنا
-
+  <section class="about">
+    <div class="about-box">
+      <h2>عن الشيف حسن</h2>
+      <p>
+        شيف متخصص في الأكلات الإيطالية والفاست فود، بيقدم تجربة أكل مختلفة بطعم غني،
+        مكونات طازة، شكل فاخر، وتجهيز يناسب العزومات والطلبات اليومية.
+      </p>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="title">
+      <h2>أشهر الأكلات</h2>
+      <p>اختيارات فخمة من الإيطالي والفاست فود</p>
     </div>
 
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>بيتزا إيطالي</h3>
+          <p>عجينة طرية، جبنة موتزاريلا، صوص إيطالي وطعم عالمي.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>باستا كريمي</h3>
+          <p>باستا بصوص كريمي غني مع دجاج أو مشروم حسب الطلب.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>برجر فاخر</h3>
+          <p>برجر طازة بصوص خاص وخضار فريش وجبنة سايحة.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>ساندوتشات Fast Food</h3>
+          <p>كريسبي، زنجر، فراخ جريل، وسندوتشات سريعة بطعم جامد.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e9a13086?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>فراخ كريسبي</h3>
+          <p>قرمشة قوية وتتبيلة مخصوصة للشيف حسن.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>أطباق عائلية</h3>
+          <p>وجبات مناسبة للّمة والعزومات بطعم وشكل يفتح النفس.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="title">
+      <h2>اطلب دلوقتي</h2>
+      <p>للطلبات والعزومات والتجهيزات الخاصة</p>
+    </div>
+
+    <div class="phone">01026171159</div>
+
+    <div class="buttons" style="justify-content:center;">
+      <a class="btn whatsapp" href="https://wa.me/201026171159" target="_blank">تواصل واتساب</a>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/hassan_gepril_123?utm_source=qr&igsh=aDY4aXM5cDVwNXdm" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/share/14ep7LdT9i6/" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@hassan.gepril?_r=1&_t=ZS-97msxpieJeu" target="_blank">TikTok</a>
+      <a href="https://youtube.com/@hassanhassan-yh9eo?si=druTJFF82fAJemHB" target="_blank">YouTube</a>
+    </div>
+  </section>
+
+  <footer>
+    Designed with ❤️ for Chef Hassan — Italian & Fast Food
   </footer>
-
-
-  <!-- زر واتساب العائم -->
-
-  <a
-    href="https://wa.me/201030085653?text=أنا%20عاوز%20أطلب%20وجبة%20الكفتة%20العائلية"
-    target="_blank"
-    rel="noopener"
-    class="floating-whatsapp"
-    aria-label="الطلب عبر واتساب">
-
-    ☎
-
-  </a>
 
 </body>
 </html>
